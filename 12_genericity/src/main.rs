@@ -22,16 +22,16 @@ fn largest_char(list: &[char]) -> char {
     largest
 }
 
-// fn largest_all<T>(list: &[T]) -> T {
-//     let s = list[0]
-//
-//     for &item in list.iter() {
-//         if item > largest {
-//             largest = item;
-//         }
-//     }
-//     largest
-// }
+fn largest_all<T: PartialOrd + Copy>(list: &[T]) -> T {
+    let mut largest = list[0];
+
+    for &item in list.iter() {
+        if item > largest {
+            largest = item;
+        }
+    }
+    largest
+}
 
 fn main() {
     let number_list = vec![34, 22, 89, 1010, 23];
@@ -43,4 +43,9 @@ fn main() {
     let result = largest_char(&char_list);
     println!("{}", result);
     assert_eq!(result, 'q');
+
+    let result = largest_all(&char_list);
+    println!("{}", result);
+    let result = largest_all(&number_list);
+    println!("{}", result);
 }

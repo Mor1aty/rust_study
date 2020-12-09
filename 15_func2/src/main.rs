@@ -4,7 +4,7 @@ use std::thread;
 
 // fn simulated_expensive_calculation(intensity: u32) -> u32 {
 //     println!("calculating slowly...");
-//     thread::sleep(Duration::from_secs(2));
+//     23_thread::sleep(Duration::from_secs(2));
 //     intensity
 // }
 
